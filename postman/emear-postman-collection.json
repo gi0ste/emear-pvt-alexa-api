@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "3ee1b05e-28ed-430c-bb9e-8a30900cff2d",
+		"name": "DC PVT Oct 2019",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CCS",
+			"item": [
+				{
+					"name": "getCloudCost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListOfTenants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListOfApplications",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{cwom_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{cwom_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{cwom_url}}/vmturbo/rest/markets/{{cwom_market_id}}/actions",
+							"protocol": "https",
+							"host": [
+								"{{cwom_url}}"
+							],
+							"path": [
+								"vmturbo",
+								"rest",
+								"markets",
+								"{{cwom_market_id}}",
+								"actions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClouds",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://{{ccs_url}}/cloudcenter-cloud-setup/api/v1/tenants/1/clouds",
+							"protocol": "https",
+							"host": [
+								"{{ccs_url}}"
+							],
+							"path": [
+								"cloudcenter-cloud-setup",
+								"api",
+								"v1",
+								"tenants",
+								"1",
+								"clouds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTenants",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://{{ccs_url}}/suite-idm/api/v1/tenants/",
+							"protocol": "https",
+							"host": [
+								"{{ccs_url}}"
+							],
+							"path": [
+								"suite-idm",
+								"api",
+								"v1",
+								"tenants",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CWOM",
+			"item": [
+				{
+					"name": "getListOfActions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{ccs_password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{ccs_username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7b40bcb5-ab66-4cca-8a7e-8351e86f8a7a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d1c8f0ae-2930-4317-9204-8e74dc86a8ef",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "83b4ce5f-3162-495b-b0a4-e87d6c9747fe",
+			"key": "ccs_username",
+			"value": "655872",
+			"type": "string"
+		},
+		{
+			"id": "4083f575-714a-464c-b0db-fb2454217484",
+			"key": "ccs_password",
+			"value": "3ae1999e-ce32-4374-8ec1-3e8995ba5339",
+			"type": "string"
+		},
+		{
+			"id": "e0c02a54-cb87-46c9-bddc-3ac49dc2da34",
+			"key": "ccs_tenant",
+			"value": "sgioia",
+			"type": "string"
+		},
+		{
+			"id": "39330d7d-d94b-46c0-baa6-c52badb13b58",
+			"key": "ccs_url",
+			"value": "na.cloudcenter.cisco.com",
+			"type": "string"
+		},
+		{
+			"id": "0ff3bdc0-0c14-449c-a4d8-ef1e5b421a7e",
+			"key": "cwom_username",
+			"value": "apiobserver",
+			"type": "string"
+		},
+		{
+			"id": "b063a9e9-19eb-4040-b311-9619d1c2a831",
+			"key": "cwom_password",
+			"value": "observer",
+			"type": "string"
+		},
+		{
+			"id": "df8cc2c0-6443-48e8-8940-54ababd7e03a",
+			"key": "cwom_url",
+			"value": "cloudos.cisco.com",
+			"type": "string"
+		},
+		{
+			"id": "8d4cc2f9-0cd7-4ffe-a1c1-b7789c6a1637",
+			"key": "cwom_market_id",
+			"value": "_0x3OYUglEd-gHc4L513yOA",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
