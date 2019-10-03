@@ -1,0 +1,86 @@
+{
+    "appId": 554,
+    "appVersion": "1",
+    "name": "DBaaS",
+    "metadata": [
+            {
+                    "id": 1034,
+                    "namespace": "",
+                    "tagName": "Name",
+                    "tagCollectionId": 892,
+                    "value": "%JOB_NAME%",
+                    "required": true,
+                    "editable": false,
+                    "name": "Name"
+            }
+    ],
+    "environmentId": "197",
+    "tagIds": [],
+    "securityProfileIds": null,
+    "agingPolicyId": "9",
+    "suspensionPolicyId": null,
+    "policyIds": null,
+    "preventTermination": false,
+    "parameters": {
+            "appParams": [],
+            "cloudParams": {
+                    "cloudRegionId": "14",
+                    "accountId": "159"
+            }
+    },
+    "jobs": [
+            {
+                    "tierId": "555",
+                    "policyIds": null,
+                    "tagIds": [],
+                    "securityProfileIds": null,
+                    "parameters": {
+                            "appParams": [
+                                    {
+                                            "name": "referredJob",
+                                            "value": ""
+                                    },
+                                    {
+                                            "name": "SSHPreference",
+                                            "value": "NO_PREFERENCE"
+                                    }
+                            ],
+                            "envParams": [],
+                            "cloudParams": {
+                                    "cloudRegionId": "14",
+                                    "accountId": "159",
+                                    "volumes": [
+                                            {
+                                                    "name": "RootVolume",
+                                                    "bootable": true,
+                                                    "size": null,
+                                                    "type": "gp2",
+                                                    "iops": null
+                                            }
+                                    ],
+                                    "rootVolumeSize": "0",
+                                    "cloudProperties": [
+                                            {
+                                                    "name": "vpcId",
+                                                    "value": "vpc-05e7cc7e"
+                                            }
+                                    ],
+                                    "nics": [
+                                            {
+                                                    "order": 1,
+                                                    "id": "subnet-f138f896",
+                                                    "allocatePublicIp": "true",
+                                                    "assignIpv6Address": null,
+                                                    "showIPV6Toggle": null,
+                                                    "ipForwardingEnabled": null
+                                            }
+                                    ],
+                                    "instance": "t2.micro"
+                            }
+                    },
+                    "appServices": []
+            }
+    ],
+    "timeZone": "GMT+02:00",
+    "responseJobJaxbNotRequired": true
+}

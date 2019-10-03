@@ -1,0 +1,89 @@
+{
+    "appId": 558,
+    "appVersion": "1",
+    "name": "123",
+    "metadata": [
+            {
+                    "id": 1077,
+                    "namespace": "",
+                    "tagName": "Name",
+                    "tagCollectionId": 928,
+                    "value": "%JOB_NAME%",
+                    "required": true,
+                    "editable": false,
+                    "name": "Name"
+            }
+    ],
+    "environmentId": "149",
+    "tagIds": [],
+    "securityProfileIds": null,
+    "agingPolicyId": "9",
+    "suspensionPolicyId": null,
+    "policyIds": null,
+    "preventTermination": false,
+    "parameters": {
+            "appParams": [],
+            "cloudParams": {
+                    "cloudRegionId": "30",
+                    "accountId": "75"
+            }
+    },
+    "jobs": [
+            {
+                    "tierId": "559",
+                    "policyIds": null,
+                    "tagIds": [],
+                    "securityProfileIds": null,
+                    "parameters": {
+                            "appParams": [
+                                    {
+                                            "name": "referredJob",
+                                            "value": ""
+                                    },
+                                    {
+                                            "name": "SSHPreference",
+                                            "value": "NO_PREFERENCE"
+                                    }
+                            ],
+                            "envParams": [],
+                            "cloudParams": {
+                                    "cloudRegionId": "30",
+                                    "accountId": "75",
+                                    "volumes": [
+                                            {
+                                                    "name": "RootVolume",
+                                                    "bootable": true,
+                                                    "size": 10,
+                                                    "type": "Regional pd-standard",
+                                                    "iops": null
+                                            }
+                                    ],
+                                    "rootVolumeSize": "0",
+                                    "cloudProperties": [
+                                            {
+                                                    "name": "LaunchZone",
+                                                    "value": "europe-west3-a"
+                                            },
+                                            {
+                                                    "name": "projectName",
+                                                    "value": "rmlab-sandbox-qdt8"
+                                            }
+                                    ],
+                                    "nics": [
+                                            {
+                                                    "order": 1,
+                                                    "netId": "rmlab-sandbox-qdt8:default",
+                                                    "id": "default",
+                                                    "allocatePublicIp": "true",
+                                                    "ipForwardingEnabled": "false"
+                                            }
+                                    ],
+                                    "instance": "g1-small"
+                            }
+                    },
+                    "appServices": []
+            }
+    ],
+    "timeZone": "GMT+02:00",
+    "responseJobJaxbNotRequired": true
+}
