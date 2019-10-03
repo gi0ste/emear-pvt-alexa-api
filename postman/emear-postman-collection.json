@@ -9,23 +9,73 @@
 			"name": "CCS",
 			"item": [
 				{
-					"name": "getCloudCost",
+					"name": "LAB1: getListOfTenants",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "https://{{ccs_url}}/suite-idm/api/v1/tenants",
+							"protocol": "https",
+							"host": [
+								"{{ccs_url}}"
+							],
+							"path": [
+								"suite-idm",
+								"api",
+								"v1",
+								"tenants"
+							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "getListOfTenants",
+					"name": "LAB2: getClouds",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://{{ccs_url}}/cloudcenter-cloud-setup/api/v1/tenants/1/clouds",
+							"protocol": "https",
+							"host": [
+								"{{ccs_url}}"
+							],
+							"path": [
+								"cloudcenter-cloud-setup",
+								"api",
+								"v1",
+								"tenants",
+								"1",
+								"clouds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCloudCost",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "https://{{ccs_url}}/cloudcenter-shared-api/api/v1/costByProvider",
+							"protocol": "https",
+							"host": [
+								"{{ccs_url}}"
+							],
+							"path": [
+								"cloudcenter-shared-api",
+								"api",
+								"v1",
+								"costByProvider"
+							]
 						}
 					},
 					"response": []
@@ -66,65 +116,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "getClouds",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "https://{{ccs_url}}/cloudcenter-cloud-setup/api/v1/tenants/1/clouds",
-							"protocol": "https",
-							"host": [
-								"{{ccs_url}}"
-							],
-							"path": [
-								"cloudcenter-cloud-setup",
-								"api",
-								"v1",
-								"tenants",
-								"1",
-								"clouds"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getTenants",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "https://{{ccs_url}}/suite-idm/api/v1/tenants/",
-							"protocol": "https",
-							"host": [
-								"{{ccs_url}}"
-							],
-							"path": [
-								"suite-idm",
-								"api",
-								"v1",
-								"tenants",
-								""
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -133,7 +124,7 @@
 			"name": "CWOM",
 			"item": [
 				{
-					"name": "getListOfActions",
+					"name": "LAB:3 getListOfActions",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -186,49 +177,49 @@
 	],
 	"variable": [
 		{
-			"id": "83b4ce5f-3162-495b-b0a4-e87d6c9747fe",
+			"id": "3aaf0207-2e1e-420f-bac3-d10bfef92010",
 			"key": "ccs_username",
 			"value": "655872",
 			"type": "string"
 		},
 		{
-			"id": "4083f575-714a-464c-b0db-fb2454217484",
+			"id": "f3b4dcf7-4158-4b5e-b2c8-34be839782ea",
 			"key": "ccs_password",
-			"value": "3ae1999e-ce32-4374-8ec1-3e8995ba5339",
+			"value": " 78099664-91af-4a15-a2ee-6382e3f98503",
 			"type": "string"
 		},
 		{
-			"id": "e0c02a54-cb87-46c9-bddc-3ac49dc2da34",
+			"id": "9e1d2934-cd47-4d89-a404-4ea87c6dc793",
 			"key": "ccs_tenant",
 			"value": "sgioia",
 			"type": "string"
 		},
 		{
-			"id": "39330d7d-d94b-46c0-baa6-c52badb13b58",
+			"id": "e392880c-f15d-4e1e-8270-e047e6f0b618",
 			"key": "ccs_url",
 			"value": "na.cloudcenter.cisco.com",
 			"type": "string"
 		},
 		{
-			"id": "0ff3bdc0-0c14-449c-a4d8-ef1e5b421a7e",
+			"id": "129a7bd4-7122-4d22-a753-c1be73bae45a",
 			"key": "cwom_username",
 			"value": "apiobserver",
 			"type": "string"
 		},
 		{
-			"id": "b063a9e9-19eb-4040-b311-9619d1c2a831",
+			"id": "6d9d6fb7-2b64-4ffb-b8e2-2640c7ea9e73",
 			"key": "cwom_password",
 			"value": "observer",
 			"type": "string"
 		},
 		{
-			"id": "df8cc2c0-6443-48e8-8940-54ababd7e03a",
+			"id": "9ea74a22-2876-44ff-84fc-3b459a97e20f",
 			"key": "cwom_url",
 			"value": "cloudos.cisco.com",
 			"type": "string"
 		},
 		{
-			"id": "8d4cc2f9-0cd7-4ffe-a1c1-b7789c6a1637",
+			"id": "2cbf9313-5cd6-46e9-a368-570261aa7208",
 			"key": "cwom_market_id",
 			"value": "_0x3OYUglEd-gHc4L513yOA",
 			"type": "string"
