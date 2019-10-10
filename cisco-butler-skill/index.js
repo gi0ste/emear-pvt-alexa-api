@@ -1,10 +1,10 @@
 const Alexa = require('ask-sdk-core');
 const axios = require('axios')
 const shortid = require('shortid')
-const config = require('./configurls');
+const config = require('./configurl.json');
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
-var DEBUG                       = true; // flip to activate debug logging 
+var DEBUG                       = true; // flip to activate debug logging
 
 
 // --[ Initial Request ]-------------------------------------------------
@@ -18,14 +18,14 @@ const LaunchRequestHandler = {
             .speak(speakOutput)
             .reprompt(speakOutput)
             .withSimpleCard(
-                "Welcome to Cisco Butler", 
+                "Welcome to Cisco Butler",
                 "Today I support listing all tenants in Cloud Center Suite.")
             .getResponse();
     }
 };
 
 // --[ SECTION 2 Custom Intent Handler ] ----------------------------------------------------------------------
-// Custom Intent Request to handle the intents configured in the Interaction model. For each of 
+// Custom Intent Request to handle the intents configured in the Interaction model. For each of
 // the intent you've configured, make sure you have a valid handler.
 
 
@@ -45,7 +45,7 @@ const TenantInfoIntentHandler = {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest'
         && request.intent.name === 'TenantInfoIntent';
- 
+
     },
    async handle(handlerInput) {
         const speechText = 'Here is the list of tenants';
@@ -192,12 +192,12 @@ const DeployDBIntentHandler = {
         //const dbType    =  getSlotValue(handlerInput.requestEnvelope, 'dbType');
         const dbType     = handlerInput.requestEnvelope.request.intent.slots.dbType.resolutions.resolutionsPerAuthority[0].values[0].value.id
         console.log(`Selected cloud type is ${cloudType} and DB type is ${dbType}`)
-        
+
         const deployName = `${dbType}_${shortid.generate()}_Alexa`
         var jsonDB = require(`./deploy/${dbType}_deploy_${cloudType}.json`)
 
         jsonDB.name = deployName
-        console.log("json require:" + JSON.stringify(jsonDB))  
+        console.log("json require:" + JSON.stringify(jsonDB))
         const response = await makePostRequest(config.CCS_HOST_URL + config.CCS_DEPLOY_PATH, config.CCS_USERNAME, config.CCS_USERNAME_APY_KEY, jsonDB )
         handlerInput.responseBuilder
             .speak(`Okay. Your ${dbType} database is deploying in ${cloudType}.`)
@@ -264,7 +264,7 @@ const makePostRequest = async (pURL, pUserName, pPassword, pData) => {
 };
 
 /**
- * 
+ *
  * @param {*} num The number to round
  * @param {*} precision The number of decimal places to preserve
  */
